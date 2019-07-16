@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+
+    <link rel="stylesheet" href="static\mystyle.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+  $(function() {
+  $('#submit').click(function() {
+    event.preventDefault();
+    var form_data = new FormData($('#form')[0]);
+    $.ajax({
+      type: 'POST',
+      url: '/data4',
+      data: form_data,
+      contentType: false,
+      processData: false,
+      dataType: 'json'
+    }).done(function(data,textStatus,jqXHR){
+      console.log(data);
+      console.log(textStatus);
+      console.log(jqXHR);
+      console.log('success!');
+      $('#msg').text(data['msg']);
+      $('#msg2').text(data['msg2']);
+      $('#msg3').text(data['msg3']);
+
+    }).fail(function(data){
+      alert('error in file uploading');
+    });
+  });
+});
+</script>
+
+  </head>
+  <body>
+    <h1>Air Quality Prediction Portel</h1>
+    
+
+
+
+   <div style="padding-left: 10%;padding-top: 2%;padding-right: 10%"> 
+
+    <form action="{{ url_for('form_data') }}" method="post" id="form"> 
+
+    <!--<form id="form" method="post">-->
+      <label for="month">Select Date</label>
+      
+      <input type="date" name="calender_date" data-date-inline-picker="true" />
+
+  
+    <input type="submit" id="submit" value="Submit">
+
+    </form>
+  </div>
+  <h4>SO2 (Ideal Mean is 500) :</h4>
+<div id ="msg" style="background-color: grey;">
+
+</div>
+
+  <h4>NO2 (Ideal Mean is 200):</h4>
+<div id ="msg2" style="background-color: grey;">
+
+</div>
+  <h4>PM10 (Ideal Mean is 50):</h4>
+<div id ="msg3" style="background-color: grey;">
+
+</div>
+
+  </body>
+</html>

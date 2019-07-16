@@ -1,0 +1,83 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun 28 14:11:34 2019
+
+@author: Aditya Kumar
+"""
+
+<form action="#" class="ws-validate">
+     <h2>1 Calendars without visible input</h2>
+
+    <div class="form-row">
+        <input type="date" class="hide-replaced" />
+    </div>
+    <div class="form-row">
+        <input type="submit" />
+    </div>
+</form>
+<hr />
+<form action="#" class="ws-validate">
+    
+<h2>2 Calendars without visible input</h2>
+
+    <div class="form-row">
+        <input type="date" class="hide-replaced" data-date-size="2" />
+    </div>
+    <div class="form-row">
+        <input type="submit" />
+    </div>
+</form>
+<hr />
+<form action="#" class="ws-validate">
+    
+<h2>4 Calendars with visible input</h2>
+
+    <div class="form-row">
+        <input type="date" data-date-size="4" />
+    </div>
+    <div class="form-row">
+        <input type="submit" />
+    </div>
+</form>
+<hr />
+<form action="#" class="ws-validate">
+     <h2>1 Calendars without visible input, but formatted timedisplay</h2>
+
+    <div class="form-row format-date"> <span class="date-display"></span>
+
+        <input type="date" class="hide-replaced" />
+    </div>
+    <div class="form-row">
+        <input type="submit" />
+    </div>
+</form>
+<hr />
+<form action="#" class="ws-validate">
+     <h2>A normal input datepicker</h2>
+
+    <div class="form-row show-inputbtns">
+        <input type="date" data-date-inline-picker="false" data-date-open-on-focus="true" />
+    </div>
+    <div class="form-row">
+        <input type="submit" />
+    </div>
+</form>
+<hr />
+<form action="#" class="ws-validate">
+     <h2>not an inlinePicker, but inline popup:</h2>
+
+    <div class="form-row show-inputbtns">
+        <input type="date" data-date-inline-picker="false" data-date-popover='{
+	"inline": true
+}' />
+    </div>
+    <div class="form-row">
+        <input type="submit" />
+    </div>
+</form>
+
+<p><a href="http://afarkas.github.io/webshim/demos/demos/cfgs/input-date.html" target="_blank">date configurator</a>
+</p>
+<hr />
+<br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
